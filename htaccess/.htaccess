@@ -1,0 +1,12 @@
+# RewriteCond %{HTTP_HOST} ^(app\.)(.+)$
+# RewriteRule ^((?!favicon.ico$)(?!favicon.png$)(?!asset\/.*$)(?!go\/.*$)(?!api\/.*$)(?!app\/.*$)(?!_ignore\/www\/.*$).*)$ /ignite.php?olink=$1&oroute=oapp&osd=%1 [NC,QSA,END]
+RewriteEngine on
+RewriteOptions inherit
+Options +FollowSymLinks
+RewriteCond %{HTTP_HOST} ^(.+?)(\.(.+)\.(.+))$
+RewriteRule ^((?!api\/.*$).*)$ dbug.php?URL=$1&OSD=%1 [NC,QSA,END]
+RewriteRule ^((?!api\/.*$).*)$ dbug.php?URL=$1&OSD=%1 [NC,QSA,END]
+
+RewriteCond %{HTTP_HOST} ^(.+?)(\.(.+)\.(.+))$
+RewriteRule ^api\/(.*)$ dbug.php?URL=$1&OSD=%1&oroute=oapi [NC,QSA,END]
+RewriteRule ^api\/(.*)$ dbug.php?URL=$1&OSD=%1&oroute=oapi [NC,QSA,END]
