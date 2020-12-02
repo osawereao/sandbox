@@ -1,0 +1,75 @@
+	body {background: #000; color:#FFF;}
+
+	#AOMediaBox {
+		position: fixed;
+		top: 34%;
+		left: 2;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		-webkit-transition-duration: 0.3s;
+		-moz-transition-duration: 0.3s;
+		-o-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+	}
+
+	#AOMediaBox .radiobtn {
+		cursor: pointer;
+		display: block;
+		text-align: center;
+		padding: 10px;
+		transition: all 0.3s ease;
+		color: white;
+		border-radius: 100%;
+		border: 3px solid #ED3237;
+		height: 36px;
+		width: 36px;
+		background: #FFF;
+		z-index: 2;
+	}
+
+	#AOMediaPlayer {
+		z-index: -1;
+		position: fixed;
+		top: -40px;
+		left: 36px;
+		-webkit-transition-duration: 0.3s;
+		-moz-transition-duration: 0.3s;
+		-o-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		background-color: #FFF;
+		background-image: url('radiobg.png');
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: 112px;
+		min-height: 200px;
+		max-width: 144px;
+		overflow: hidden;
+		border: 2px solid #FFFFFF;
+	}
+
+	#AOMediaPlayer #PlayerControl {
+		position: absolute;
+		bottom: 0;
+		background: #000;
+		width: 100%;
+		padding: 5px 5px 1px 2px;
+		font-size: 0.9em;
+	}
+
+	#AOMediaPlayer #PlayerControl img {
+		cursor: pointer;
+	}
+
+	.radiocontrolbtn {
+		height: 24px;
+		width: 24px;
+		padding: 2px 4px;
+	}
+
+	.radiocontrolwave {
+		height: 24px;
+		width: 90px;
+		padding: 2px;
+		margin-right: -40px;
+	}

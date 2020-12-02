@@ -17,7 +17,6 @@ function PlayerControl(action){
 		else if(PlayPauseIcon == 'radiopause.png'){
 			AOPlayer.pause();
 			PlayPause.setAttribute("src", "radioplay.png");
-			// if(play)
 			WaveImg.setAttribute("src", "radiowave.png");
 		}
 	}
@@ -46,9 +45,5 @@ function PlayerControl(action){
 			}
 		}
 	}
-
-
 	return false;
 }
-
-
