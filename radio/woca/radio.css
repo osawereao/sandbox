@@ -1,0 +1,68 @@
+
+#WOCARadio {
+	position: fixed;
+	top: 30%;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	color: #FFF;
+	/*border: 1px solid #8F3334;*/
+}
+
+#WOCARadioPlayer {
+
+	/*z-index: -1;*/
+	/*position: fixed;*/
+	/*top: -40px;*/
+	/*left: 36px;*/
+	/*left: 0;*/
+	/*	-webkit-transition-duration: 0.3s;
+		-moz-transition-duration: 0.3s;
+		-o-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		*/
+		position: relative;
+		background-color: #FFF;
+		background-image: url('radio-bg.png');
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: 150px;
+		min-height: 200px;
+		max-width: 160px;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+		left: 45px;
+		/*border: 1px solid #8F3334;*/
+	}
+
+	#MediaControlBar {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background: #000;
+		padding: 6px 5px 2px;
+		/*border-top: 2px solid #8F3334;*/
+	}
+
+	.MediaControlBtn {
+		cursor: pointer;
+		height: 22px;
+		width: 22px;
+		padding: 2px 5px 2px 0;
+	}
+	.MediaControlIndicator {
+		cursor: pointer;
+		height: 26px;
+		margin-bottom: -1px;
+		margin-right: 2px;
+		float: right;
+		clear: right;
+	}
+
+	#MediaControlToggle {
+		position: absolute;
+		left: 0px;
+		top: 0;
+		max-height: 200px;
+	}

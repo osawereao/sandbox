@@ -3,7 +3,7 @@
 	#AOMediaBox {
 		position: fixed;
 		top: 34%;
-		left: 2;
+		left: 0;
 		-webkit-transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 		transform: translateY(-50%);
@@ -12,6 +12,33 @@
 		-o-transition-duration: 0.3s;
 		transition-duration: 0.3s;
 	}
+
+	#radiopen {
+		position: relative;
+		cursor: pointer;
+		z-index: 2;
+		border: 1px solid red;
+	}
+
+	#radioclose {
+		position: relative;
+		cursor: pointer;
+		z-index: 2;
+		border: 1px solid red;
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
 
 	#AOMediaBox .radiobtn {
 		cursor: pointer;
@@ -32,7 +59,8 @@
 		z-index: -1;
 		position: fixed;
 		top: -40px;
-		left: 36px;
+		/*left: 36px;*/
+		left: 0;
 		-webkit-transition-duration: 0.3s;
 		-moz-transition-duration: 0.3s;
 		-o-transition-duration: 0.3s;
