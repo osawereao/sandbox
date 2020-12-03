@@ -12,26 +12,20 @@
 <body>
 	<div id="WOCARadio">
 		<div id="WOCARadioPlayer">
-			<video autoplay id="RadioPlayer" data-playlist="https://api.radioking.io/radio/379069/listen.m3u"></video>
+			<video preload="auto" autoplay id="RadioPlayer" data-playlist="https://api.radioking.io/radio/379069/listen.m3u"></video>
 			<div id="MediaControlBar">
 				<img src="woca/pause.png" class="MediaControlBtn" id="PlayPauseBtn" onclick="PlayerControl('playpause'); return false;">
 				<img src="woca/stop.png" class="MediaControlBtn" id="StopBtn" onclick="PlayerControl('stop'); return false;">
-				<img src="woca/wave.gif" class="MediaControlIndicator" id="Wave" onclick="PlayerControl('mute'); return false;">
+				<img src="woca/wave.gif" class="MediaControlIndicator" id="WaveBtn" onclick="PlayerControl('mute'); return false;">
 			</div>
 		</div>
-		<img src="woca/radio-open.png" id="MediaControlToggle" onclick="TogglePlayer(); return false;">
+		<img src="woca/radio-close.png" id="MediaControlToggle" onclick="TogglePlayer(); return false;">
+		<input name="MediaPlayerStatus" id="MediaPlayerStatus" value="playing" type="hidden">
+		<input name="MediaPlayerStatusPrev" id="MediaPlayerStatusPrev" value="" type="hidden">
 	</div>
 
 	<script src="woca/stream.js"></script>
 	<script>m3uStreamPlayer.init({selector: '#RadioPlayer', debug: true});</script>
 	<script src="woca/radio.js"></script>
-	<script>
-		// $(document).ready(function(){
-			// $("#MediaControlToggle").click(function(){
-			// 	$("#WOCARadioPlayer").toggle(500);
-
-			// });
-		// });
-	</script>
 </body>
 </html>
