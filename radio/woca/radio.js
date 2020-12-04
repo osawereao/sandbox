@@ -98,6 +98,7 @@ function PlayerControl(action){
 				MediaPlayerStatus.value = 'mute';
 				MediaPlayerControlMute.value = 'on';
 				RadioStatusUpdate('Mute');
+				return;
 			}
 			else {
 				if(MediaPlayerControlPlayPauseStop.value == "play"){
