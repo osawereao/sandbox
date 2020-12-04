@@ -4,37 +4,28 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<title>Radio</title>
-	<link href="aoplayer.css" type="text/css" rel="stylesheet" media="all">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>WOCA Radio</title>
+	<style>body {margin: 0; background: #000;}</style>
+	<link href="woca/radio.css" type="text/css" rel="stylesheet">
+	<script src="woca/jquery.js"></script>
 </head>
 <body>
-
-
-
-
-	<div id="AOMediaBox">
-		<img src="radioicon.png" class="radiobtn" id="radiobtn">
-		<div id="AOMediaPlayer">
-			<video autoplay id="player" data-playlist="https://api.radioking.io/radio/379069/listen.m3u"></video>
-			<div id="PlayerControl">
-				<img src="radiopause.png" class="radiocontrolbtn" id="PlayPauseIcon" onclick="PlayerControl('playpause'); return false;">
-				<img src="radiostop.png" class="radiocontrolbtn" onclick="PlayerControl('stop'); return false;">
-				<img src="radiowave.gif" class="radiocontrolwave" id="WaveIcon" onclick="PlayerControl('mute'); return false;">
+	<div id="WOCARadio">
+		<div id="WOCARadioPlayer">
+			<video preload="auto" autoplay id="RadioPlayer" data-playlist="https://api.radioking.io/radio/379069/listen.m3u"></video>
+			<div id="MediaControlBar">
+				<img src="woca/pause.png" class="MediaControlBtn" id="PlayPauseBtn" onclick="PlayerControl('playpause'); return false;">
+				<img src="woca/stop.png" class="MediaControlBtn" id="StopBtn" onclick="PlayerControl('stop'); return false;">
+				<img src="woca/wave.gif" class="MediaControlIndicator" id="WaveBtn" onclick="PlayerControl('mute'); return false;">
 			</div>
 		</div>
+		<img src="woca/radio-close.png" id="MediaControlToggle" onclick="TogglePlayer(); return false;">
+		<input name="MediaPlayerStatus" id="MediaPlayerStatus" value="playing" type="hidden">
+		<input name="MediaPlayerStatusPrev" id="MediaPlayerStatusPrev" value="" type="hidden">
 	</div>
 
-	<script src="m3uStreamPlayer.js"></script>
-	<script>m3uStreamPlayer.init({selector: '#player', debug: true});</script>
-	<script src="aoplayer.js"></script>
-	<script>
-		$(document).ready(function(){
-			$("#AOMediaPlayer").hide();
-			$("#radiobtn").click(function(){
-				$("#AOMediaPlayer").toggle(300);
-			});
-		});
-	</script>
+	<script src="woca/stream.js"></script>
+	<script>m3uStreamPlayer.init({selector: '#RadioPlayer', debug: true});</script>
+	<script src="woca/radio.js"></script>
 </body>
 </html>
