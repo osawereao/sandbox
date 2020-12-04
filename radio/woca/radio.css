@@ -24,6 +24,15 @@
 	border: 1px solid #FFFFFF;
 }
 
+#RadioStatus {
+	color: #ED3237;
+	font-size: 0.6em;
+	padding: 5px;
+	position: absolute;
+	right: 5px;
+	border-radius: 3px;
+}
+
 #MediaControlBar {
 	position: absolute;
 	bottom: 0;
@@ -38,6 +47,7 @@
 	width: 22px;
 	padding: 2px 5px 2px 0;
 }
+
 .MediaControlIndicator {
 	cursor: pointer;
 	height: 26px;

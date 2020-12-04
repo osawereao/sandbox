@@ -16,6 +16,7 @@
 <body>
 	<div id="WOCARadio">
 		<div id="WOCARadioPlayer">
+			<span id="RadioStatus">Playing...</span>
 			<video preload="auto" autoplay id="RadioPlayer" data-playlist="https://api.radioking.io/radio/379069/listen.m3u"></video>
 			<div id="MediaControlBar">
 				<img src="woca/pause.png" class="MediaControlBtn" id="PlayPauseBtn" onclick="PlayerControl('playpause'); return false;">
@@ -29,7 +30,6 @@
 		<input name="MediaPlayerControlPlayPauseStop" id="MediaPlayerControlPlayPauseStop" value="play" type="hidden">
 		<input name="MediaPlayerControlMute" id="MediaPlayerControlMute" value="off" type="hidden">
 		<input name="MediaPlayerControlVolume" id="MediaPlayerControlVolume" value="1" type="hidden">
-		<p>Radio: <span id="RadioStatus">Playing</span></p>
 	</div>
 
 	<script src="woca/stream.js?version=<?php echo $ver;?>"></script>

@@ -52,39 +52,49 @@ function PlayerControl(action){
 			return;
 		}
 
-
-
-
-		//pause media
-		if(MediaPlayerStatus.value != 'stop' && MediaPlayerControlPlayPauseStop.value == 'play'){
+		else if(MediaPlayerControlPlayPauseStop.value == 'play' && MediaPlayerStatus.value == 'play'){
 			PlayPauseBtn.setAttribute("src", "woca/play.png");
 			WaveBtn.setAttribute("src", "woca/wave.png");
 			MediaPlayer.pause();
 			MediaPlayerStatus.value = "pause";
 			MediaPlayerControlPlayPauseStop.value = "pause";
 			RadioStatusUpdate('Paused');
+			return;
 		}
-		else if(MediaPlayerStatus.value != 'play' && MediaPlayerControlPlayPauseStop.value != 'play'){
+
+		else if(MediaPlayerControlPlayPauseStop.value == 'pause' && MediaPlayerStatus.value == 'pause'){
 			PlayPauseBtn.setAttribute("src", "woca/pause.png");
-			if(MediaPlayerControlMute.value == 'off'){
+			WaveBtn.setAttribute("src", "woca/wave.gif");
+			MediaPlayer.play();
+			MediaPlayerStatus.value = "play";
+			MediaPlayerControlPlayPauseStop.value = "play";
+			RadioStatusUpdate('Playing');
+			return;
+		}
+		else if(MediaPlayerControlMute.value == 'on' && MediaPlayerStatus.value == 'mute'){
+			if(MediaPlayerControlPlayPauseStop.value == 'play'){
+				//pause while mute
+				PlayPauseBtn.setAttribute("src", "woca/play.png");
+				WaveBtn.setAttribute("src", "woca/wave-mute.png");
+				MediaPlayer.pause();
+				MediaPlayerStatus.value = "mute";
+				MediaPlayerControlPlayPauseStop.value = "pause";
+				RadioStatusUpdate('Paused');
+				return;
+			}
+
+			else if(MediaPlayerControlPlayPauseStop.value == 'pause'){
+				PlayPauseBtn.setAttribute("src", "woca/pause.png");
+				WaveBtn.setAttribute("src", "woca/wave.gif");
+				MediaPlayer.play();
 				MediaPlayer.volume = 1;
 				MediaPlayerStatus.value = "play";
+				MediaPlayerControlPlayPauseStop.value = "play";
 				MediaPlayerControlMute.value == 'off';
 				RadioStatusUpdate('Playing');
-				WaveBtn.setAttribute("src", "woca/wave.gif");
+				return;
 			}
-			else {
-				RadioStatusUpdate('Play Muted');
-				MediaPlayer.volume = 0;
-				MediaPlayerStatus.value = "mute";
-				MediaPlayerControlMute.value == 'on';
-				WaveBtn.setAttribute("src", "woca/wave-mute.png");
-			}
-
-			MediaPlayer.play();
-			MediaPlayerControlPlayPauseStop.value = "play";
 		}
-
 	}
 
 
@@ -97,7 +107,7 @@ function PlayerControl(action){
 				MediaPlayer.volume = 0;
 				MediaPlayerStatus.value = 'mute';
 				MediaPlayerControlMute.value = 'on';
-				RadioStatusUpdate('Mute');
+				RadioStatusUpdate('Muted');
 				return;
 			}
 			else {
