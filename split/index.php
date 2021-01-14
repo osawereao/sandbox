@@ -2,6 +2,7 @@
 function SplitCash($income, $project){
 	#setup & computation
 	$earning = ($income - $project);
+	$o['percent'] = ($project/($income * 0.01));
 	$o['income'] = $income;
 	$o['project'] = $project;
 	$o['earning'] = $earning;
@@ -13,15 +14,16 @@ function SplitCash($income, $project){
 	#format
 	$i = array();
 	foreach($o as $label => $value){
-		$i[$label] = '₦'.number_format($value);
+		if($label === 'percent'){$i[$label] = $value.'%';}
+		else {$i[$label] = '₦'.number_format($value);}
 	}
 	$num = (object)$i;
 	return $num;
 }
 
 
-$income = 55000;
-$project = 5000;
+$income = 1000000;
+$project = 0;
 $disburse = SplitCash($income, $project);
 ?>
 <!DOCTYPE html>
@@ -38,9 +40,9 @@ $disburse = SplitCash($income, $project);
 <body>
 
 	<p>
-		Income: <?php echo $disburse->income;?> (<small><strong><?php echo $disburse->project;?></strong></small>)<br>
-		Earning: <?php echo $disburse->earning;?><br><br>
-		<span class="heading">Disburse</span><br>
+		Income: <?php echo $disburse->income;?><br>
+		Project: <strong><?php echo $disburse->project;?></strong> <small>(<?php echo $disburse->percent;?>)</small><br><br>
+		<span class="heading">Disburse:</span> <?php echo $disburse->earning;?><br>
 		<?php echo $disburse->savings;?> — Savings • <small>KUDA</small><br>
 		<?php echo $disburse->utility;?> — Utility • <small>ZENITH</small><br>
 		<?php echo $disburse->expense;?> — Expense • <small>FIRST</small><br>
