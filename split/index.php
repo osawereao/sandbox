@@ -22,8 +22,8 @@ function SplitCash($income, $project){
 }
 
 
-$income = 1000000;
-$project = 0;
+$income = 35000;
+$project = 10000;
 $disburse = SplitCash($income, $project);
 ?>
 <!DOCTYPE html>
@@ -41,12 +41,12 @@ $disburse = SplitCash($income, $project);
 
 	<p>
 		Income: <?php echo $disburse->income;?><br>
-		Project: <strong><?php echo $disburse->project;?></strong> <small>(<?php echo $disburse->percent;?>)</small><br><br>
+		Project: <strong><?php echo $disburse->project;?></strong> <small>(<?php echo $disburse->percent;?>)</small> - GTB<br><br>
 		<span class="heading">Disburse:</span> <?php echo $disburse->earning;?><br>
 		<?php echo $disburse->savings;?> — Savings • <small>KUDA</small><br>
 		<?php echo $disburse->utility;?> — Utility • <small>ZENITH</small><br>
 		<?php echo $disburse->expense;?> — Expense • <small>FIRST</small><br>
-		<?php echo $disburse->miscellaneous;?> — Miscellaneous • <small>GTB</small><br>
+		<?php echo $disburse->miscellaneous;?> — Miscellaneous • <small>ACCESS</small><br>
 	</p>
 
 	<?php
