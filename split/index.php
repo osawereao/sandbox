@@ -1,4 +1,16 @@
 <?php
+function isDecimal($n){
+	return is_numeric($n) && floor($n) != $n;
+}
+
+function asPercent($n){
+	return ($n/100);
+}
+
+function percentOf($n, $per){
+	return ($per/100) * $n;
+}
+
 function SplitCash($income, $project){
 	#setup & computation
 	$earning = ($income - $project);
@@ -22,8 +34,9 @@ function SplitCash($income, $project){
 }
 
 
-$income = 35000;
-$project = 10000;
+$income = 200000;
+$project = 50000;
+$project = percentOf($income, 0);
 $disburse = SplitCash($income, $project);
 ?>
 <!DOCTYPE html>
