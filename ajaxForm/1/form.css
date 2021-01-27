@@ -1,0 +1,13 @@
+.results {
+	padding: 10px;
+	background: #EFEFEF;
+	border: 1px solid tan;
+}
+
+.results strong {
+	color: brown;
+}
+
+.formSection {
+	margin-top: 20px;
+}
