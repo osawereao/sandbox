@@ -36,7 +36,7 @@ function SplitCash($income, $project){
 
 $income = 200000;
 $project = 50000;
-$project = percentOf($income, 0);
+$project = percentOf($income, 20);
 $disburse = SplitCash($income, $project);
 ?>
 <!DOCTYPE html>
