@@ -1,3 +1,75 @@
+// ajax snippet
+$(document).ready(function() {
+	$('form.edit-offer-form').ajaxForm({
+		url: Wo_Ajax_Requests_File() + '?f=offer&s=edit_offer',
+		beforeSend: function() {
+			$('.edit-offer-form').find('.disable_btn').attr('disabled','disabled');
+		},
+		success: function(data) {
+			if (data.status == 200) {
+				$('.edit-offer-form').find('.app-general-alert').html("<div class='alert alert-success'><?php echo($wo['lang']['offer_successfully_edited']) ?></div>");
+				$('.edit-offer-form').find('.alert-success').fadeIn(300);
+				setTimeout(function (argument) {
+					$('.edit-offer-form').find('.alert-success').fadeOut(300);
+					window.location.reload(true);
+
+				},3000);
+			} else {
+				$('.edit-offer-form').animate({
+              scrollTop: $('html, body').offset().top //#DIV_ID is an example. Use the id of your destination on the page
+            });
+				$('.edit-offer-form').find('.app-general-alert').html('<div class="alert alert-danger">' + data.error + '</div>');
+				$('.edit-offer-form').find('.alert-danger').fadeIn(300);
+				setTimeout(function (argument) {
+					$('.edit-offer-form').find('.alert-danger').fadeOut(300);
+
+				},3000);
+			}
+			$('.edit-offer-form').find('.disable_btn').removeAttr("disabled");
+		}
+	});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* UTILITY FUNCTIONS */
 function jsDelayAO(ms) {
 	var timer = 0;
